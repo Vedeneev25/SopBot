@@ -8,7 +8,7 @@ import xlwt
 from openpyxl import Workbook
 from openpyxl import load_workbook
 
-token = '5397183960:AAH2WjLXtQGP9pTIpa3ggMyONSgPHwxq468'
+token = 
 bot = telebot.TeleBot(token)
 
 #Работа с ексель файлом
@@ -21,22 +21,22 @@ print(maxRow)
 def Airlines (sheet1, maxRow):
     airlines = []
     i = 1
-    while i < maxRow:
+    while i < maxRow+1:
         al = sheet1.cell(row = i, column = 1).value
         if al in airlines:
             i = i + 1
         else:
             airlines.append(al)
             i += 1
-    #print (airlines)
     return airlines
-
+    
+print(Airlines(sheet1, maxRow))
 #Определяем категории. Функция принимает авиакомпанию, и возвращает список возможных ответов.
 def Categorii(Airlinename, maxRow, sheet1):
     #c = input("Выбери АК: ")
     category = []
     i = 1
-    while i < maxRow:
+    while i < maxRow + 1:
         cat = sheet1.cell(row = i, column = 2).value
         if AirlineName == sheet1.cell(row = i, column = 1).value:
             if (cat in category):
@@ -98,7 +98,7 @@ def send_text(message):
         bot.register_next_step_handler(message, category)     
     else:
         i=1
-        while (i < maxRow):
+        while (i < maxRow + 1):
             if (AirlineName == sheet1.cell(row = i, column = 1).value and CategoryName == sheet1.cell(row = i, column = 2).value):
                 answer = sheet1.cell(row = i, column = 3).value
                 break
