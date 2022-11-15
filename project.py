@@ -8,7 +8,7 @@ import xlwt
 from openpyxl import Workbook
 from openpyxl import load_workbook
 
-token = 
+token = '5397183960:AAH2WjLXtQGP9pTIpa3ggMyONSgPHwxq468'
 bot = telebot.TeleBot(token)
 
 #Работа с ексель файлом
